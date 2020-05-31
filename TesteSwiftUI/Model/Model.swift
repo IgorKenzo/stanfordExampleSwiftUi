@@ -10,34 +10,12 @@ import Foundation
 
 struct MemoryGame<CardContent> where CardContent : Equatable {
     var cards: Array<Card>
+    var theme : ThemeModel.Theme
+    var points : Int = 0
     
     var indexFaceUpCard : Int? {
         get {
-            //Era isso:
-            
-//            var faceUpCardsIndicies = [Int]()
-//            for index in cards.indices {
-//                if cards[index].isFaceUp {
-//                    faceUpCardsIndicies.append(index)
-//                }
-//            }
-//   ===========
-//        Mudou para isso:
-//            var faceUpCardsIndicies = cards.indices.filter { (index) -> Bool in
-//                return cards[index].isFaceUp
-//            }
-//   ===========
-//        E ficou assim:
-//            let faceUpCardsIndicies = cards.indices.filter { cards[$0].isFaceUp }
-//   ===========
-//        Depois de tirar a funcao abaixo, ficou assim o codigo:
             return cards.indices.filter { cards[$0].isFaceUp }.only
-            
-//         Pode tirar, virou func de Array (Arra+Only)
-//            if faceUpCardsIndicies.count == 1 {
-//                return faceUpCardsIndicies.first
-//            }
-//            return nil
         }
         
         set{
@@ -48,12 +26,27 @@ struct MemoryGame<CardContent> where CardContent : Equatable {
     }
     
     mutating func choose(card: Card){
-        print("Card chosen: \(card)")
         if let chosenIndex : Int = cards.firstIndex(of: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
             if let faceUpCardIndex = indexFaceUpCard {
                 if cards[chosenIndex].content == cards[faceUpCardIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[faceUpCardIndex].isMatched = true
+                    points += 2
+                }
+                else {
+                    if !cards[chosenIndex].wasFlipped {
+                        cards[chosenIndex].wasFlipped = true
+                    }
+                    else {
+                        points -= 1
+                    }
+                    
+                    if !cards[faceUpCardIndex].wasFlipped {
+                        cards[faceUpCardIndex].wasFlipped = true
+                    }
+                    else {
+                        points -= 1
+                    }
                 }
                 self.cards[chosenIndex].isFaceUp = !self.cards[chosenIndex].isFaceUp
             }
@@ -64,8 +57,9 @@ struct MemoryGame<CardContent> where CardContent : Equatable {
         }
     }
     
-    init(numberOfPairOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+    init(numberOfPairOfCards: Int,theme: ThemeModel.Theme , cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
+        self.theme = theme
         for pairIndex in 0..<numberOfPairOfCards {
             let content = cardContentFactory(pairIndex)
             cards.append(Card(content: content, id: pairIndex*2))
@@ -77,6 +71,7 @@ struct MemoryGame<CardContent> where CardContent : Equatable {
     struct Card : Identifiable{
         var isFaceUp : Bool = false
         var isMatched : Bool = false
+        var wasFlipped : Bool = false
         var content : CardContent
         var id : Int
     }

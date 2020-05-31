@@ -8,20 +8,32 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MemoryGameView: View {
     @ObservedObject var viewModel : EmojiMemoryGame
     
     var body: some View {
-        return Grid(viewModel.cards){ card in
-            //ForEach(viewModel.cards, content: { card in
-            CardView(card: card).onTapGesture {
-                self.viewModel.choose(card: card)
+        VStack {
+            HStack{
+                Text(viewModel.themeName)
+                Spacer()
+                Text("Points: \(viewModel.points)")
+                Spacer()
+                Button("New Game",action: viewModel.newGame)
+            }
+                .padding(30)
+            
+            Grid(viewModel.cards){ card in
+                //ForEach(viewModel.cards, content: { card in
+                CardView(card: card).onTapGesture {
+                    self.viewModel.choose(card: card)
+                }
+                .padding()
+                //})//.foregroundColor(.orange) seta para todos os filhos a cor laranja
             }
             .padding()
-            //})//.foregroundColor(.orange) seta para todos os filhos a cor laranja
+            .foregroundColor(viewModel.themeColor)
         }
-        .padding()
-        .foregroundColor(.orange)
+         
     }
 }
 
@@ -49,6 +61,6 @@ struct CardView : View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: EmojiMemoryGame())
+        MemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
