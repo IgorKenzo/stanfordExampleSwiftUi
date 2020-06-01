@@ -16,7 +16,7 @@ struct ThemeModel {
             Theme(name: "Animal", quantPair: 2, emojis: ["🐶","🐯"],color: ColorEnum.red),
             Theme(name: "Sports", quantPair: 4, emojis: ["🏹","⚾️","🏐","🤿"],color: ColorEnum.yellow),
             Theme(name: "Auto", quantPair: 6, emojis: ["🚗","🚕","🚙","🚌","🚎","🏎"],color: ColorEnum.green),
-            Theme(name: "Objects", quantPair: 5, emojis: ["⌚️","📱","💻","⌨️","🖥"],color: ColorEnum.white),
+            Theme(name: "Objects", quantPair: 5, emojis: ["⌚️","📱","💻","⌨️","🖥"],color: ColorEnum.purple),
             Theme(name: "Numbers", quantPair: 10, emojis: ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"],color: ColorEnum.blue),
             Theme(name: "Food", quantPair: 4, emojis: ["🍱","🍙","🍘","🍥"],color: ColorEnum.orange)
         ]

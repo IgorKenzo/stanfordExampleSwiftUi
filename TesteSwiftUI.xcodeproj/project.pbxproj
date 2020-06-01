@@ -15,6 +15,8 @@
 		0515ACF62475D47200AACE07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0515ACF42475D47200AACE07 /* LaunchScreen.storyboard */; };
 		0515AD012475D47200AACE07 /* TesteSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515AD002475D47200AACE07 /* TesteSwiftUITests.swift */; };
 		0515AD0C2475D47200AACE07 /* TesteSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515AD0B2475D47200AACE07 /* TesteSwiftUIUITests.swift */; };
+		05391AA024859BEC00C05B62 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05391A9F24859BEC00C05B62 /* Pie.swift */; };
+		05391AA22485A02900C05B62 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05391AA12485A02900C05B62 /* Cardify.swift */; };
 		05B95CFB2480329500F8CCE5 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B95CFA2480329500F8CCE5 /* Grid.swift */; };
 		05B95CFD24803BFC00F8CCE5 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B95CFC24803BFC00F8CCE5 /* GridLayout.swift */; };
 		05B95CFF2480468C00F8CCE5 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B95CFE2480468C00F8CCE5 /* Array+Identifiable.swift */; };
@@ -56,6 +58,8 @@
 		0515AD072475D47200AACE07 /* TesteSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TesteSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0515AD0B2475D47200AACE07 /* TesteSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteSwiftUIUITests.swift; sourceTree = "<group>"; };
 		0515AD0D2475D47200AACE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05391A9F24859BEC00C05B62 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pie.swift; path = TesteSwiftUI/Pie.swift; sourceTree = SOURCE_ROOT; };
+		05391AA12485A02900C05B62 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		05B95CFA2480329500F8CCE5 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		05B95CFC24803BFC00F8CCE5 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		05B95CFE2480468C00F8CCE5 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				0515ACEF2475D47200AACE07 /* Assets.xcassets */,
 				0515ACF42475D47200AACE07 /* LaunchScreen.storyboard */,
 				0515ACF72475D47200AACE07 /* Info.plist */,
+				05391AA12485A02900C05B62 /* Cardify.swift */,
 				05B95CFE2480468C00F8CCE5 /* Array+Identifiable.swift */,
 				05EFC8762480639F0057AF51 /* Array+Only.swift */,
 				0515ACF12475D47200AACE07 /* Preview Content */,
@@ -176,6 +181,7 @@
 		05F5BEC0248323150013BB1A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05391A9F24859BEC00C05B62 /* Pie.swift */,
 				0515ACED2475D47000AACE07 /* MemoryGameView.swift */,
 			);
 			path = View;
@@ -320,6 +326,8 @@
 				05C924A02477237100C4147A /* Model.swift in Sources */,
 				05B95CFF2480468C00F8CCE5 /* Array+Identifiable.swift in Sources */,
 				05F5BEBD248322DA0013BB1A /* ThemeModel.swift in Sources */,
+				05391AA22485A02900C05B62 /* Cardify.swift in Sources */,
+				05391AA024859BEC00C05B62 /* Pie.swift in Sources */,
 				05B95CFD24803BFC00F8CCE5 /* GridLayout.swift in Sources */,
 				05B95CFB2480329500F8CCE5 /* Grid.swift in Sources */,
 			);

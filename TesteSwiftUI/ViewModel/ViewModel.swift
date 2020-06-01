@@ -11,7 +11,7 @@ import SwiftUI
 enum ColorEnum {
     case red
     case yellow
-    case white
+    case purple
     case green
     case blue
     case orange
@@ -22,8 +22,8 @@ enum ColorEnum {
                 return Color.red
             case .yellow:
                 return Color.yellow
-            case .white:
-                return Color.white
+            case .purple:
+                return Color.purple
             case .green:
                 return Color.green
             case .blue:
